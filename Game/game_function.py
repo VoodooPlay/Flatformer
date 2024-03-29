@@ -12,8 +12,8 @@ def update_screen(screen, player):
 
 def check_events(player, menu):
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            exit()
+        # if event.type == pygame.QUIT:
+        #     exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 menu.main_menu()
@@ -21,9 +21,6 @@ def check_events(player, menu):
                     menu.menu_active = False
                 else:
                     menu.menu_active = True
-            elif event.key == pygame.K_ESCAPE:
-                menu.main_menu()
-                menu.menu_active = True
             elif event.key is pygame.K_w:
                 player.UP = True
             elif event.key is pygame.K_s:
