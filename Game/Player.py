@@ -24,9 +24,9 @@ class Player:
             self.player_rect.x -= self.speed
         elif self.RIGHT:
             self.player_rect.x += self.speed
-        self.move()
+        self.check_collision()
 
-    def move(self):
+    def check_collision(self):
         if self.player_rect.right > self.screen_rect.right:
             self.player_rect.right = self.screen_rect.right
         elif self.player_rect.left < self.screen_rect.left:
