@@ -8,11 +8,17 @@ class GameMenu:
         self.menu_active = True
         self.SCREEN_COLOR = 'black'
 
-    def main_menu(self):
+    def play_button(self, x, y, width, height, text, action):
+        pass
+
+    def print_text(self, text):
         font = pygame.font.SysFont('arial', 30, bold=True)
-        menu_text = font.render('MAIN MENU', True, 'white')
+        menu_text = font.render(text, True, 'white')
         text_width, text_height = menu_text.get_size()
         self.screen.fill(self.SCREEN_COLOR)
         self.screen.blit(menu_text, ((self.screen_rect[2] - text_width) // 2, 100))
-        pygame.display.flip()
 
+    def main_menu(self):
+        self.print_text("Menu")
+        # self.play_button()
+        pygame.display.flip()
