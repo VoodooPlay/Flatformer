@@ -18,7 +18,6 @@ class GameMenu:
                 if button_rect.collidepoint(event.pos):
                     print('Button')
 
-
         pygame.draw.rect(self.screen, 'black', button_rect)
         self.screen.blit(text, (button_rect.x + button_rect.width // 2 - text.get_width() // 2,
                                 button_rect.y + button_rect.height // 2 - text.get_height() // 2))
