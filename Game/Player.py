@@ -16,14 +16,27 @@ class Player:
         self.RIGHT = False
 
     def update(self):
-        if self.UP:
+        if self.LEFT and self.UP:
+            self.player_rect.x -= self.speed
             self.player_rect.y -= self.speed
+        elif self.RIGHT and self.UP:
+            self.player_rect.x += self.speed
+            self.player_rect.y -= self.speed
+        elif self.RIGHT and self.DOWN:
+            self.player_rect.x += self.speed
+            self.player_rect.y += self.speed
+        elif self.UP:
+            self.player_rect.y -= self.speed
+        elif self.LEFT and self.DOWN:
+            self.player_rect.x -= self.speed
+            self.player_rect.y += self.speed
         elif self.DOWN:
             self.player_rect.y += self.speed
         elif self.LEFT:
             self.player_rect.x -= self.speed
         elif self.RIGHT:
             self.player_rect.x += self.speed
+
         self.check_collision()
 
     def check_collision(self):
