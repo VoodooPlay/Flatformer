@@ -19,17 +19,14 @@ FPS = 60
 
 player = Player(screen)
 menu = game_menu.GameMenu(screen)
+menu.main_menu()
 
 while True:
     if menu.menu_active:
-        menu.main_menu()
         gf.check_events(player, menu)
     else:
         gf.update_screen(screen, player)
         gf.check_events(player, menu)
         player.update()
-
-        player_x = font.render("str(player.player_rect.x)", True, (0, 0, 0))
-        screen.blit(player_x, (100, 100))
 
     clock.tick(FPS)

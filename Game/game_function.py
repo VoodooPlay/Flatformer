@@ -14,13 +14,20 @@ def check_events(player, menu):
     for event in pygame.event.get():
         # if event.type == pygame.QUIT:
         #     exit()
+        if event.type == pygame.MOUSEBUTTONDOWN and menu.menu_active:
+            # Если был сделан клик мышью
+            if menu.play_rect.collidepoint(event.pos):
+                menu.is_start = False
+                menu.menu_active = False
+                menu.is_screen_fill = False
+            if menu.exit_rect.collidepoint(event.pos):
+                exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
+                menu.menu_active = True
                 menu.main_menu()
-                if menu.menu_active:
-                    menu.menu_active = False
-                else:
-                    menu.menu_active = True
+                menu.is_screen_fill = True
+                pygame.display.flip()
             elif event.key is pygame.K_w:
                 player.UP = True
             elif event.key is pygame.K_s:
