@@ -42,11 +42,11 @@ class Player:
     def check_collision(self):
         if self.player_rect.right > self.screen_rect.right:
             self.player_rect.right = self.screen_rect.right
-        elif self.player_rect.left < self.screen_rect.left:
+        if self.player_rect.left < self.screen_rect.left:
             self.player_rect.left = self.screen_rect.left
-        elif self.player_rect.bottom > self.screen_rect.bottom:
+        if self.player_rect.bottom > self.screen_rect.bottom:
             self.player_rect.bottom = self.screen_rect.bottom
-        elif self.player_rect.top < self.screen_rect.top:
+        if self.player_rect.top < self.screen_rect.top:
             self.player_rect.top = self.screen_rect.top
 
     def draw(self):
