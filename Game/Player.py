@@ -25,11 +25,11 @@ class Player:
         elif self.RIGHT and self.DOWN:
             self.player_rect.x += self.speed
             self.player_rect.y += self.speed
-        elif self.UP:
-            self.player_rect.y -= self.speed
         elif self.LEFT and self.DOWN:
             self.player_rect.x -= self.speed
             self.player_rect.y += self.speed
+        elif self.UP:
+            self.player_rect.y -= self.speed
         elif self.DOWN:
             self.player_rect.y += self.speed
         elif self.LEFT:
